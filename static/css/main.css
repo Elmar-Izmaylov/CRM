@@ -1,0 +1,13 @@
+/*SIZE img*/
+header{
+    position: sticky;
+    top:0;
+    z-index: 100;
+    background-color: white;
+    
+}
+.size_img{
+    height: 64px;
+    width: 64px;
+
+}
