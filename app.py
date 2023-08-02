@@ -2,28 +2,25 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///project.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 
 db = SQLAlchemy(app)
-
 
 
 class Post(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(300), nullable=False)
-    text = db.Column(db.Text, nullable=False)
+    name = db.Column(db.String(255))
+    surname = db.Column(db.String(255))
+    age = db.Column(db.String(255))
+    phone = db.Column(db.String(255))
+    time = db.Column(db.String(255))
+    day = db.Column(db.String(255))
 
     
 
-@app.route("/")
-@app.route("/index")
-def home():
 
-    return render_template('index.html')
-
-
-@app.route('/posts')
+@app.route('/')
 def posts():
     # Take from data_baze
     posts = Post.query.all()
@@ -36,10 +33,14 @@ def create():
 
     if request.method == 'POST':
 
-        title = request.form['title']
-        text = request.form['text']
+        name = request.form['name']
+        surname = request.form['surname']
+        age = request.form['age']
+        phone = request.form['phone']
+        time = request.form['time']
+        day = request.form['day']
 
-        post = Post(title=title, text=text)
+        post = Post(name=name,surname=surname, age=age, phone=phone, time=time, day=day)
 
         try:
             # ADD in data_base
@@ -65,4 +66,4 @@ if __name__ == '__main__':
         db.create_all()
 
     # Finally, run the Flask application
-    app.run()
+    app.run(debug=True)

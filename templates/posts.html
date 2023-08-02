@@ -2,21 +2,65 @@
 
 
 {% block title %}
-    All Add
-{% endblock  %}
- 
+All Add
+{% endblock %}
+
 
 {% block body %}
-    Add 
+
 
 <div class="bg-body-tertiary p-5 rounded">
 
     {% for post in posts %}
-    <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ post.title }}</font></font></h1>
-    <p class="lead"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ post.text }}</font><font style="vertical-align: inherit;"></font></font></p>
+    <div class="row shadow mb-3 p-3">
+        <div class="col-sm-12 col-lg-6">
+            <div class="input-group mb-3 row">
+                <span class="input-group-text col-2" id="basic-addon1">Name</span>
+                <input type="text" class="form-control col-10" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1" value="{{ post.name }}" disabled>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="input-group mb-3 row">
+                <span class="input-group-text col-2" id="basic-addon1">Surname</span>
+                <input type="text" class="form-control col-10" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1" value="{{ post.surname }}" disabled>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="input-group mb-3 row">
+                <span class="input-group-text col-2" id="basic-addon1">Age</span>
+                <input type="text" class="form-control col-10" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1" value="{{ post.age }}" disabled>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="input-group mb-3 row">
+                <span class="input-group-text col-2" id="basic-addon1">Phone</span>
+                <input type="text" class="form-control col-10" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1" value="{{ post.phone }}" disabled>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-6">
+            <div class="input-group mb-3 row">
+                <span class="input-group-text col-2" id="basic-addon1">Study time</span>
+                <input type="text" class="form-control col-10" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1" value="{{ post.time }}" disabled>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-6">
+            <div class="input-group mb-3 row">
+                <span class="input-group-text col-2" id="basic-addon1">Study days</span>
+                <input type="text" class="form-control col-10" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1" value="{{ post.day }}" disabled>
+            </div>
+        </div>
+
+    </div>
+
+
     {% endfor %}
 </div>
 
-{% endblock  %}
-
-    
+{% endblock %}

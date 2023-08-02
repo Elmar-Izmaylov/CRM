@@ -2,18 +2,24 @@
 
 
 {% block title %}
-    Add in database
+    Add
 {% endblock %}
     
 
 {% block body %}
-    Add in database
+
 
 
 <form method="post" class="form-control">
-    <input type="text" name="title" placeholder="Enter you article" class="form-control"><br>
-    <input type="text" name="text" placeholder="Enter you text" class="form-control"><br>
+    <input type="text" name="name" placeholder="Enter you name" class="form-control"><br>
+    <input type="text" name="surname" placeholder="Enter you surname" class="form-control"><br>
+    <input type="text" name="age" placeholder="Enter you age" class="form-control"><br>
+    <input type="text" name="phone" placeholder="Enter you phone number" class="form-control"><br>
+    <input type="text" name="day" placeholder="day" class="form-control"><br>
+    <input type="text" name="time" placeholder="time" class="form-control"><br>
+
+
     
-    <button class="btn" type="submit" >Add</button>
+    <button class="btn" type="submit">Save</button>
 </form>
 {% endblock %}
