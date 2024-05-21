@@ -17,8 +17,6 @@ class Post(db.Model):
     time = db.Column(db.String(255))
     day = db.Column(db.String(255))
 
-    
-
 
 @app.route('/')
 def posts():
